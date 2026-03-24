@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, Mail, Phone } from "lucide-react";
 import Navbar from "./Navbar";
 
 const Footer = () => (
@@ -28,13 +28,13 @@ const Footer = () => (
             Ondo State, Nigeria
           </p>
           <p>
-            <a href="mailto:dlcf.futa23@gmail.com" className="hover:text-accent transition-colors">
-              📧 dlcf.futa23@gmail.com
+            <a href="mailto:dlcf.futa23@gmail.com" className="flex items-center gap-2 hover:text-accent transition-colors">
+              <Mail className="h-4 w-4" /> dlcf.futa23@gmail.com
             </a>
           </p>
           <p>
-            <a href="tel:+2348069625869" className="hover:text-accent transition-colors">
-              📞 +234 (0) 8069625869
+            <a href="tel:+2348069625869" className="flex items-center gap-2 hover:text-accent transition-colors">
+              <Phone className="h-4 w-4" /> +234 (0) 8069625869
             </a>
           </p>
         </div>
