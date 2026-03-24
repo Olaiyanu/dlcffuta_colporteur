@@ -89,7 +89,7 @@ const Register = () => {
           </div>
           <div className="space-y-2">
             <Label htmlFor="department">Department</Label>
-            <Input id="department" placeholder="e.g. Computer Science" value={department} onChange={(e) => setDepartment(e.target.value)} required />
+            <Input id="department" placeholder="e.g. MEE" value={department} onChange={(e) => setDepartment(e.target.value)} required />
           </div>
           <div className="space-y-2">
             <Label htmlFor="level">Level</Label>
