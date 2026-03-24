@@ -14,6 +14,18 @@ const features = [
 
 const Index = () => (
   <div>
+    <style>
+      {`
+        @keyframes soft-breathe {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.04); }
+        }
+        .animate-soft-breathe {
+          animation: soft-breathe 4s ease-in-out infinite;
+        }
+      `}
+    </style>
+
     {/* Hero Section */}
     <section className="relative overflow-hidden">
       <div className="absolute inset-0">
@@ -27,11 +39,11 @@ const Index = () => (
         <p className="mt-4 max-w-xl text-lg font-semibold uppercase tracking-widest text-primary-foreground/90 animate-fade-in" style={{ animationDelay: "0.15s" }}>
           Raising Saintly Intellectuals
         </p>
-        <div className="mt-8 flex flex-wrap gap-3 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+        <div className="mt-8 flex flex-wrap gap-3 animate-fade-in" style={{ animationDelay: "20s" }}>
           <Button size="lg" variant="secondary" asChild>
             <Link to="/library">Explore Library</Link>
           </Button>
-          <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90" asChild>
+          <Button size="lg" className="bg-accent text-accent-foreground transition-all duration-300 hover:bg-accent/90 hover:scale-110 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/50 animate-soft-breathe hover:animate-none" asChild>
             <Link to="/auth/register">Register</Link>
           </Button>
         </div>

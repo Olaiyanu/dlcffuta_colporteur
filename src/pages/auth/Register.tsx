@@ -86,7 +86,7 @@ const Register = () => {
             <BookOpen className="h-7 w-7 text-primary-foreground" />
           </div>
           <h1 className="font-display text-2xl font-bold text-foreground">Join the Fellowship</h1>
-          <p className="mt-1 text-sm text-muted-foreground">Create your DLCF account</p>
+          <p className="mt-1 text-sm text-muted-foreground">Create your DLCF FUTA account</p>
         </div>
         <form onSubmit={handleSubmit} className="space-y-4 rounded-xl border border-border bg-card p-6 shadow-sm">
           <div className="space-y-2">
@@ -115,6 +115,7 @@ const Register = () => {
               className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
             >
               <option value="" disabled>Select your level</option>
+              <option value="PDS/UABS">PDS/UABS</option>
               <option value="100 Level">100 Level</option>
               <option value="200 Level">200 Level</option>
               <option value="300 Level">300 Level</option>
