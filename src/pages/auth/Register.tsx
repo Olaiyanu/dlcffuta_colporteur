@@ -11,7 +11,8 @@ const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [password, setPassword] = useState("");
+  const [department, setDepartment] = useState("");
+  const [level, setLevel] = useState("");
   const [loading, setLoading] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ const Register = () => {
     setLoading(true);
     try {
       // 1. Register the user locally
-      await register(name, email, password);
+      await register(name, email, "dlcf-auto-pass");
 
       // Log the user out immediately so they don't have access to the dashboard until approved
       if (logout) {
@@ -44,6 +45,8 @@ const Register = () => {
           name: name,
           email: email,
           phone: phone,
+          department: department,
+          level: level,
           message: "A new member has joined the DLCF FUTA Library.",
         }),
       });
@@ -85,8 +88,25 @@ const Register = () => {
             <Input id="phone" type="tel" placeholder="08012345678" value={phone} onChange={(e) => setPhone(e.target.value)} required />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="password">Password</Label>
-            <Input id="password" type="password" placeholder="••••••••" value={password} onChange={(e) => setPassword(e.target.value)} required />
+            <Label htmlFor="department">Department</Label>
+            <Input id="department" placeholder="e.g. Computer Science" value={department} onChange={(e) => setDepartment(e.target.value)} required />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="level">Level</Label>
+            <select
+              id="level"
+              value={level}
+              onChange={(e) => setLevel(e.target.value)}
+              required
+              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              <option value="" disabled>Select your level</option>
+              <option value="100 Level">100 Level</option>
+              <option value="200 Level">200 Level</option>
+              <option value="300 Level">300 Level</option>
+              <option value="400 Level">400 Level</option>
+              <option value="500 Level">500 Level</option>
+            </select>
           </div>
           <Button type="submit" className="w-full" disabled={loading}>
             {loading ? "Creating account…" : "Create Account"}
