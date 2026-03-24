@@ -32,7 +32,7 @@ const Index = () => (
             <Link to="/library">Explore Library</Link>
           </Button>
           <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90" asChild>
-            <Link to="/auth/register">Join Fellowship</Link>
+            <Link to="/auth/register">Register</Link>
           </Button>
         </div>
       </div>
