@@ -86,7 +86,7 @@ const Register = () => {
             <BookOpen className="h-7 w-7 text-primary-foreground" />
           </div>
           <h1 className="font-display text-2xl font-bold text-foreground">Join the Fellowship</h1>
-          <p className="mt-1 text-sm text-muted-foreground">Create your DLCF FUTA account</p>
+          <p className="mt-1 text-sm text-muted-foreground">Create your DLCF FUTA Library account</p>
         </div>
         <form onSubmit={handleSubmit} className="space-y-4 rounded-xl border border-border bg-card p-6 shadow-sm">
           <div className="space-y-2">
