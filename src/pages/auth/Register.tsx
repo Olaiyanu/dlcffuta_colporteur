@@ -23,15 +23,15 @@ const Register = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      // Check if email already exists in localStorage
-      const existingEmailsStr = localStorage.getItem("dlcf_registered_emails");
-      const existingEmails = existingEmailsStr ? JSON.parse(existingEmailsStr) : [];
-      
-      if (existingEmails.includes(email.toLowerCase())) {
-        toast({ title: "Registration failed", description: "An account with this email already exists.", variant: "destructive" });
-        setLoading(false);
-        return;
-      }
+      // // Check if email already exists in localStorage
+      // const existingEmailsStr = localStorage.getItem("dlcf_registered_emails");
+      // const existingEmails = existingEmailsStr ? JSON.parse(existingEmailsStr) : [];
+      // 
+      // if (existingEmails.includes(email.toLowerCase())) {
+      //   toast({ title: "Registration failed", description: "An account with this email already exists.", variant: "destructive" });
+      //   setLoading(false);
+      //   return;
+      // }
 
       // 1. Register the user locally
       await register(name, email, "dlcf-auto-pass");
@@ -63,9 +63,9 @@ const Register = () => {
 
       if (!response.ok) throw new Error("Failed to send email");
 
-      // Save the email to localStorage to prevent future duplicates
-      existingEmails.push(email.toLowerCase());
-      localStorage.setItem("dlcf_registered_emails", JSON.stringify(existingEmails));
+      // // Save the email to localStorage to prevent future duplicates
+      // existingEmails.push(email.toLowerCase());
+      // localStorage.setItem("dlcf_registered_emails", JSON.stringify(existingEmails));
 
       toast({ title: "Welcome!", description: "Account created successfully." });
       setShowSuccess(true);
